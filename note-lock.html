@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EGAKI_NOTE / LOCKED</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/blacklog.css">
+</head>
+<body class="blacklog-body">
+    <main class="blacklog-wrap">
+        <header class="blacklog-head">
+            <div>
+                <h1 class="blacklog-title">EGAKI_NOTE</h1>
+                <p class="muted">protected personal record</p>
+            </div>
+            <div class="blacklog-status">ENCRYPTED<br>OWNER : EGAKI TOMO</div>
+        </header>
+
+        <section class="log-panel">
+            <p class="log-line log-line--strong">PROTECTED FILE</p>
+            <p class="log-line">この手記には別のパスワードが設定されています。</p>
+            <p class="log-line">MESSAGE FROM OWNER:</p>
+            <p class="log-line log-line--warn">「AURORAと同じやり方で、今度は私自身から。」</p>
+            <p class="log-line">必要な情報が足りなければ、AURORAに聞いてみてください。</p>
+        </section>
+
+        <section class="auth-box">
+            <span class="auth-label">NOTE PASSWORD</span>
+            <form id="note-auth" class="auth-form">
+                <input
+                    id="note-password"
+                    type="text"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    maxlength="7"
+                    placeholder="_______"
+                >
+                <button type="submit">DECRYPT</button>
+            </form>
+            <p id="note-message" class="auth-message" aria-live="polite"></p>
+        </section>
+
+        <nav class="log-actions">
+            <a href="aurora.html">[ AURORAへ戻る ]</a>
+            <a href="interview.html">[ 2020年インタビューを確認 ]</a>
+        </nav>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/note-lock.js"></script>
+</body>
+</html>

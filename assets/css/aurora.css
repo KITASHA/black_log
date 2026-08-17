@@ -1,0 +1,91 @@
+.aurora-body {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(41, 75, 54, 0.18), transparent 38%),
+        #000;
+    color: var(--terminal);
+    font-family: Consolas, "SFMono-Regular", monospace;
+}
+
+.aurora-shell {
+    width: min(900px, calc(100% - 24px));
+    margin: 0 auto;
+    padding: 24px 0 50px;
+}
+
+.aurora-system {
+    margin-bottom: 22px;
+    padding: 16px;
+    border: 1px solid #25402b;
+    background: #030704;
+    color: #82a88a;
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+.chat-log {
+    min-height: 430px;
+    padding: 4px 2px 22px;
+}
+
+.chat-line {
+    margin: 0 0 15px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.chat-line--user {
+    color: #ecf2ed;
+}
+
+.chat-line--aurora {
+    color: #b8ffc5;
+}
+
+.chat-line--system {
+    color: #617c68;
+}
+
+.chat-form {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    gap: 8px;
+    padding: 12px 0 4px;
+    background: linear-gradient(transparent, #000 24%);
+}
+
+.chat-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 14px;
+    border: 1px solid #2a5534;
+    border-radius: 6px;
+    background: #030604;
+    color: #dfffe5;
+}
+
+.chat-form button {
+    padding: 0 18px;
+    border: 1px solid #3e744a;
+    border-radius: 6px;
+    background: #14311b;
+    color: #effff2;
+}
+
+.file-drop {
+    margin: 18px 0;
+    padding: 16px;
+    border: 1px solid #375a3e;
+    background: #071009;
+}
+
+.file-drop strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.file-drop a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #b8ffc5;
+}
