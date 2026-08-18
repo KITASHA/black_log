@@ -5,7 +5,9 @@ const authPanel = document.querySelector("#auth-panel");
 const lines = [
     ["[BLACK.LOG]", "strong"],
     ["EXTERNAL ACCESS DETECTED", ""],
-    ["AURORA INSTANCE : LOCKED", "warn"],
+    ["", ""],
+    ["SYSTEM : AURORA", "strong"],
+    ["STATUS : LOCKED", "warn"],
     ["NETWORK ACCESS : BLOCKED", ""],
     ["", ""],
     ["PASSWORD REQUIRED", "strong"],
