@@ -9,7 +9,7 @@ const lines = [
     ["NETWORK ACCESS : BLOCKED", ""],
     ["", ""],
     ["PASSWORD REQUIRED", "strong"],
-    ["HINT : 彼女自身", "strong"],
+    ["AUTH KEY : HER NAME", "strong"],
     ["FORMAT : 8 CHARACTERS / A-Z", ""]
 ];
 
