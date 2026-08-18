@@ -7,13 +7,13 @@ document.querySelectorAll("[data-reset]").forEach((button) => {
     });
 });
 
-const searchForm = document.querySelector("#quick-search");
-if (searchForm) {
-    searchForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const query = new FormData(searchForm).get("q")?.trim();
-        if (query) {
-            window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-        }
-    });
-}
+// const searchForm = document.querySelector("#quick-search");
+// if (searchForm) {
+//     searchForm.addEventListener("submit", (event) => {
+//         event.preventDefault();
+//         const query = new FormData(searchForm).get("q")?.trim();
+//         if (query) {
+//             window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+//         }
+//     });
+// }

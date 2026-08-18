@@ -169,3 +169,13 @@ button {
     color: var(--text);
     text-decoration: none;
 }
+
+.fiction-footer {
+    width: 100%;
+    padding: 16px 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    box-sizing: border-box;
+}
