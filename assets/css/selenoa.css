@@ -1422,3 +1422,84 @@ ul {
     }
 
 }
+/* ========================================
+   Research roster
+======================================== */
+
+.roster-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0 24px;
+}
+
+.roster-info p {
+    margin: 0;
+    color: #667085;
+    font-size: 14px;
+}
+
+.roster-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.roster {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+}
+
+.roster th,
+.roster td {
+    padding: 18px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.roster th {
+    background: #f7f8fa;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .05em;
+}
+
+.roster td {
+    color: #1d2939;
+    font-size: 14px;
+}
+
+.roster tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.roster tbody tr:hover {
+    background: #fafbfc;
+}
+
+.roster td:nth-child(1),
+.roster td:nth-child(3) {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.roster td:nth-child(1) {
+    color: #667085;
+    font-size: 13px;
+}
+
+.archive-note {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.archive-note p {
+    margin: 0 0 12px;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.8;
+}
