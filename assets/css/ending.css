@@ -61,3 +61,6 @@
 .ending-quote {
     color: #eef2f6;
 }
+
+/* Compact layout */
+.ending-wrap { padding-top: 36px; padding-bottom: 48px; }

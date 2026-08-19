@@ -89,3 +89,8 @@
     margin-top: 10px;
     color: #b8ffc5;
 }
+
+/* Compact layout */
+.aurora-wrap { padding-top: 18px; padding-bottom: 32px; }
+.aurora-chat { min-height: 300px; padding-bottom: 14px; }
+.aurora-line { margin-bottom: 10px; line-height: 1.65; }

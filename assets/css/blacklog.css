@@ -145,3 +145,9 @@
         min-height: 44px;
     }
 }
+
+/* Compact layout */
+.blacklog-wrap { padding-top: 22px; padding-bottom: 32px; }
+.log-panel { min-height: 250px; padding: 17px; }
+.auth-box { padding: 15px; }
+.log-actions { margin-top: 16px; }

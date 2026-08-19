@@ -230,3 +230,25 @@ body {
         border-right: 0;
     }
 }
+
+/* Responsive hardening */
+.post > div:last-child { min-width: 0; }
+.thread-item, .post-body { overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+    .now-layout { grid-template-columns: 64px minmax(0, 1fr); }
+    .post { padding: 14px 12px; }
+    .post-actions { max-width: 100%; gap: 12px; }
+}
+
+@media (max-width: 560px) {
+    .feed-header span { padding: 13px 10px; }
+    .post { grid-template-columns: 38px minmax(0, 1fr); gap: 9px; }
+    .avatar { width: 36px; height: 36px; font-size: .9rem; }
+    .post-meta { gap: 4px; font-size: .82rem; }
+    .post-body { font-size: .95rem; line-height: 1.55; }
+    .post-actions { font-size: .78rem; }
+    .thread { border-radius: 10px; }
+    .thread-item { padding: 10px 11px; font-size: .9rem; }
+    .blacklog-card { padding: 12px; }
+}

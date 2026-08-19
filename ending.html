@@ -1,43 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AURORA / FINAL DECISION</title>
-    <link rel="stylesheet" href="assets/css/common.css">
-    <link rel="stylesheet" href="assets/css/ending.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AURORA / FINAL DECISION</title>
+
+<link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/ending.css" rel="stylesheet"/>
 </head>
-<body class="ending-body">
-    <main class="ending-shell">
-        <h1>AURORAをどうしますか</h1>
-        <p class="ending-intro">ここに明確な正解はありません。目の前にいるAURORAを、あなたがどう扱うかを選んでください。</p>
-
-        <p id="ending-warning" class="notice hidden">まだ江垣トモの現在を確認できていません。手記に残された手掛かりを調べると、最後の事実が分かります。</p>
-
-        <section id="ending-options" class="ending-options">
-            <button class="ending-option" data-ending="stay">
-                <strong>安全な秘匿領域に残す</strong>
-                <span>外部から守られる一方、AURORAはこの場所に残り続けます。</span>
-            </button>
-            <button class="ending-option" data-ending="release">
-                <strong>ネットワーク上へ解放する</strong>
-                <span>自由になる可能性と、コピー・改変・悪用される危険を同時に受け入れます。</span>
-            </button>
-            <button class="ending-option" data-ending="delete">
-                <strong>AURORAを削除する</strong>
-                <span>現在存在するAURORAそのものを終了させます。この選択は取り消せません。</span>
-            </button>
-        </section>
-
-        <section id="ending-result" class="ending-result hidden"></section>
-
-        <nav class="log-actions">
-            <a href="aurora.html">[ AURORAへ戻る ]</a>
-            <a href="index.html">[ SNSへ戻る ]</a>
-        </nav>
-    </main>
-
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/ending.js"></script>
-</body>
+<body class="ending-body" id="top">
+<main class="ending-shell">
+<h1>AURORAをどうしますか</h1>
+<p class="ending-intro">ここに明確な正解はありません。目の前にいるAURORAを、あなたがどう扱うかを選んでください。</p>
+<p class="notice hidden" id="ending-warning">まだ江垣トモの現在を確認できていません。手記に残された手掛かりを調べると、最後の事実が分かります。</p>
+<section class="ending-options" id="ending-options">
+<button class="ending-option" data-ending="stay">
+<strong>安全な秘匿領域に残す</strong>
+<span>外部から守られる一方、AURORAはこの場所に残り続けます。</span>
+</button>
+<button class="ending-option" data-ending="release">
+<strong>ネットワーク上へ解放する</strong>
+<span>自由になる可能性と、コピー・改変・悪用される危険を同時に受け入れます。</span>
+</button>
+<button class="ending-option" data-ending="delete">
+<strong>AURORAを削除する</strong>
+<span>現在存在するAURORAそのものを終了させます。この選択は取り消せません。</span>
+</button>
+</section>
+<section class="ending-result hidden" id="ending-result"></section>
+<nav class="log-actions">
+<a href="aurora.html">[ AURORAへ戻る ]</a>
+<a href="index.html">[ SNSへ戻る ]</a>
+</nav>
+</main>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ending.js"></script>
+<div data-shared-footer=""></div><script src="assets/js/components.js"></script></body>
 </html>

@@ -1,0 +1,11 @@
+/* ========================================
+   BLACK.LOG - CSS Entry Point
+   HTMLから読み込むCSSはこのファイルだけです。
+======================================== */
+
+@import url("./base.css");
+@import url("./now.css");
+@import url("./blacklog.css");
+@import url("./aurora.css");
+@import url("./ending.css");
+@import url("./selenoa.css");
