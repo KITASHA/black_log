@@ -2,7 +2,7 @@ const results = [
     {
         keywords: ["セレノア", "セレノアテクノロジー", "AURORA", "オーロラ"],
         title: "セレノアテクノロジー株式会社｜研究開発アーカイブ",
-        url: "company.html",
+        url: "selenoa/index.html",
         display: "selenoa-tech.local / research / archive",
         description: "研究開発プロジェクト、過去の研究成果、AURORAプロジェクトに関する公開情報。"
     },
