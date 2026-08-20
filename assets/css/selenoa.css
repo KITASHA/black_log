@@ -390,84 +390,151 @@
 
 .aurora-description {
     max-width: 720px;
-    margin: 12px 0 16px;
+    margin: 12px 0 18px;
     color: #d2d7e1;
     font-size: 13px;
 }
 
-.freeze-status {
-    max-width: 720px;
-    padding: 12px 14px;
-    border-left: 3px solid #8da3ff;
-    background: rgba(255, 255, 255, .06);
+/* ========================================
+   AURORA
+======================================== */
+
+.section-aurora {
+    background: var(--sl-soft);
+    border-top: 1px solid var(--sl-line);
+    border-bottom: 1px solid var(--sl-line);
 }
 
-.freeze-status strong {
-    display: block;
+.aurora-panel {
+    padding: 26px 28px;
+    border-radius: 10px;
+    background: var(--sl-dark);
+    color: #fff;
 }
 
-.freeze-status p {
-    margin: 5px 0 0;
-    color: #d2d7e1;
-    font-size: 13px;
+.aurora-panel .eyebrow {
+    color: #9fb1ff;
+}
+
+.aurora-panel h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+
+/* Main Information */
+
+.aurora-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+
+.aurora-summary,
+.aurora-lead {
+    padding: 20px 20px 20px 0;
 }
 
 .aurora-lead {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, .14);
+    padding-left: 24px;
+    border-left: 1px solid rgba(255, 255, 255, .14);
 }
 
-.aurora-lead__label {
-    margin: 0 0 10px;
+.aurora-block-label {
+    margin: 0 0 7px;
     color: #9fb1ff;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: .14em;
 }
 
-.aurora-lead__profile {
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    gap: 12px;
-    align-items: center;
-}
-
-.aurora-lead .researcher-symbol {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .08);
+.aurora-summary h3,
+.aurora-lead h3 {
+    margin: 0 0 6px;
     color: #fff;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 18px;
 }
 
-.aurora-lead .researcher-role {
-    margin: 0 0 2px;
-    color: #9ca6b7;
-    font-size: 11px;
-}
-
-.aurora-lead__info h3 {
+.aurora-summary p:last-child,
+.aurora-lead p:last-child {
     margin: 0;
-    font-size: 17px;
+    color: #cbd1dc;
+    font-size: 12.5px;
+    line-height: 1.7;
 }
 
 .aurora-lead .researcher-roman {
-    margin: 2px 0 0;
-    color: #9ca6b7;
+    margin: -3px 0 7px;
+    color: #8f99aa;
     font-size: 10px;
-    letter-spacing: .08em;
+    letter-spacing: .12em;
 }
+
+
+/* Freeze Notice */
+
+.freeze-notice {
+    margin-top: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(159, 177, 255, .3);
+    border-radius: 7px;
+    background: rgba(49, 87, 213, .1);
+}
+
+.freeze-notice__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 12px;
+    border-bottom: 1px solid rgba(159, 177, 255, .2);
+    color: #aebcff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.freeze-notice__head strong {
+    padding: 2px 7px;
+    border: 1px solid rgba(159, 177, 255, .4);
+    border-radius: 3px;
+    color: #c6d0ff;
+    font-size: 9px;
+}
+
+.freeze-notice__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px 14px;
+}
+
+.freeze-notice__body strong {
+    display: block;
+    color: #fff;
+    font-size: 12.5px;
+}
+
+.freeze-notice__body p {
+    margin: 3px 0 0;
+    color: #b7bfcd;
+    font-size: 11.5px;
+}
+
+.freeze-notice .text-link {
+    flex-shrink: 0;
+    color: #b8c5ff;
+}
+
+
+/* Links */
 
 .aurora-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px 20px;
-    margin-top: 18px;
+    justify-content: flex-end;
+    margin: 10px;
 }
 
 .aurora-links .text-link {
@@ -475,6 +542,33 @@
 }
 
 
+/* Responsive */
+
+@media (max-width: 600px) {
+    .aurora-panel {
+        padding: 20px 18px;
+    }
+
+    .aurora-main {
+        grid-template-columns: 1fr;
+    }
+
+    .aurora-summary,
+    .aurora-lead {
+        padding: 17px 0;
+    }
+
+    .aurora-lead {
+        border-top: 1px solid rgba(255, 255, 255, .14);
+        border-left: 0;
+    }
+
+    .freeze-notice__body {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
 /* ========================================
    News Articles
 ======================================== */
