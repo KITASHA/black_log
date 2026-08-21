@@ -1,3 +1,7 @@
+App.update({
+    blacklogDiscovered: true
+});
+
 const state = App.load();
 const log = document.querySelector("#blacklog-lines");
 const authPanel = document.querySelector("#auth-panel");

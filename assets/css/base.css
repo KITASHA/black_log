@@ -676,22 +676,61 @@ table {
     margin-top: 28px;
     line-height: 0;
 }
+/* ========================================
+   App Icons
+======================================== */
 
-.now-app-icon {
+.app-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.app-link {
+    display: block;
+    line-height: 0;
+    text-decoration: none;
+}
+
+.app-icon {
     width: 52px;
     height: 52px;
     border-radius: 12px;
     object-fit: cover;
+
+    box-shadow: 0 2px 8px rgba(20, 30, 40, .12);
+
     transition:
         transform .15s ease,
-        opacity .15s ease;
+        opacity .15s ease,
+        box-shadow .15s ease;
 }
 
-.now-app-link:hover .now-app-icon {
-    transform: scale(1.06);
-    opacity: .88;
+.app-link:hover .app-icon {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 5px 14px rgba(20, 30, 40, .16);
 }
 
-.now-app-link:active .now-app-icon {
+.app-link:active .app-icon {
     transform: scale(.97);
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 480px) {
+
+    .app-links {
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .app-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 11px;
+    }
 }
