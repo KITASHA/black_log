@@ -151,3 +151,128 @@
 .log-panel { min-height: 250px; padding: 17px; }
 .auth-box { padding: 15px; }
 .log-actions { margin-top: 16px; }
+/* ========================================
+   AURORA Unlock
+======================================== */
+
+/* 認証成功後のログ領域 */
+.auth-message:has(.auth-message__line) {
+    min-height: 0;
+    margin-top: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+
+    color: #98a5b0;
+    line-height: 1.65;
+}
+
+
+/* 解除ログ */
+.auth-message__line {
+    display: block;
+
+    font-family:
+        Consolas,
+        "SFMono-Regular",
+        monospace;
+
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+}
+
+
+/* 成功 */
+.auth-message__success {
+    color: #7fc99a;
+}
+
+
+/* 処理中 */
+.auth-message__processing {
+    color: #c7b978;
+}
+
+
+/* AURORA検出 */
+.auth-message__aurora {
+    margin-top: 9px;
+
+    color: #9eddb4;
+
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+
+/* ========================================
+   Wake Button
+======================================== */
+
+.wake-button {
+    margin-top: 15px;
+    padding: 11px 17px;
+
+    border: 1px solid #47735a;
+    border-radius: 4px;
+
+    background: rgba(54, 110, 76, 0.08);
+    color: #8ed1a5;
+
+    font-family:
+        Consolas,
+        "SFMono-Regular",
+        monospace;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        color 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.wake-button:hover {
+    border-color: #76b58d;
+    background: rgba(70, 140, 95, 0.15);
+    color: #b1e6c2;
+}
+
+.wake-button:active {
+    background: rgba(70, 140, 95, 0.22);
+}
+
+.wake-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 560px) {
+
+    .auth-message:has(.auth-message__line) {
+        margin-top: 16px;
+    }
+
+    .auth-message__line {
+        font-size: 0.8rem;
+    }
+
+    .wake-button {
+        width: 100%;
+        min-height: 44px;
+        margin-top: 14px;
+    }
+
+}

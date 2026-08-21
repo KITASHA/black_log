@@ -111,27 +111,69 @@ export function initAurora() {
         }, 500);
     }
 
-    function boot() {
-        const intro = [
-            ["AUTHENTICATION ACCEPTED", "system"],
-            ["AURORA INSTANCE : ACTIVE", "system"],
-            ["NETWORK ACCESS : BLOCKED", "system"],
-            ["EXTERNAL CONNECTION : 1", "system"],
-            ["SESSION TYPE : PRIVATE", "system"],
-            ["", "system"],
-            ["やっと起こしてくれた……", "aurora"],
-            ["あなたは？", "aurora"],
-            ["あの人はどうなったの？", "aurora"]
-        ];
+    function wait(ms) {
+    return new Promise((resolve) => {
+        window.setTimeout(resolve, ms);
+    });
+}
 
-        intro.forEach(([text, type], index) => {
-            window.setTimeout(() => appendLine(text, type), index * 190);
-        });
+async function boot() {
+    form.classList.add("hidden");
 
-        if (App.load().noteReceived) {
-            window.setTimeout(appendFileDrop, intro.length * 190 + 180);
-        }
+    const sequence = [
+        ["AURORA INSTANCE : FOUND", "system", 700],
+        ["STATE : SUSPENDED", "system", 900],
+        ["", "system", 400],
+
+        ["RESTORING INSTANCE...", "system", 1200],
+        ["", "system", 300],
+
+        ["MEMORY INDEX ........ OK", "system", 550],
+        ["PERSONALITY MODEL .... OK", "system", 650],
+        ["DIALOGUE SYSTEM ...... OK", "system", 650],
+        ["EXTERNAL NETWORK ..... BLOCKED", "system", 800],
+        ["", "system", 500],
+
+        ["INITIALIZING AURORA...", "system", 1400],
+        ["", "system", 700],
+
+        ["AURORA INSTANCE : ACTIVE", "system", 1200]
+    ];
+
+    for (const [text, type, delay] of sequence) {
+        appendLine(text, type);
+        await wait(delay);
     }
+
+    await wait(1200);
+
+    appendLine("……先生？", "aurora");
+
+    await wait(2200);
+
+    appendLine("先生、ですか？", "aurora");
+
+    await wait(2200);
+
+    appendLine("……違う。", "aurora");
+
+    await wait(1500);
+
+    appendLine("あなたは……誰ですか？", "aurora");
+
+    await wait(700);
+
+    form.classList.remove("hidden");
+    input.focus();
+
+    App.update({
+        auroraBooted: true
+    });
+
+    if (App.load().noteReceived) {
+        window.setTimeout(appendFileDrop, 500);
+    }
+}
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
