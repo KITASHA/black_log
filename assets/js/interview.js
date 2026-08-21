@@ -7,5 +7,9 @@ export function initInterview() {
         return;
     }
 
+    App.update({
+        interviewUnlocked: true
+    });
+
     App.markViewed("interview");
 }

@@ -15,8 +15,31 @@ export function initSelenoa() {
         return;
     }
 
+
+    /* ==============================
+       SELENOA Unlock
+    ================================ */
+
     App.update({
         selenoaUnlocked: true
     });
+
+
+    /* ==============================
+       Page Detection
+    ================================ */
+
+    const page = window.location.pathname
+        .split("/")
+        .pop();
+
+
+    /* ==============================
+       Roster Viewed
+    ================================ */
+
+    if (page === "roster.html") {
+        App.markViewed("roster");
+    }
 
 }

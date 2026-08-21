@@ -70,6 +70,15 @@ export function initSearch() {
         selenoaApp.classList.remove("hidden");
     }
 
+
+    const interviewApp = document.querySelector("#interview-app");
+
+if (interviewApp) {
+    interviewApp.classList.toggle(
+        "hidden",
+        !state.interviewUnlocked
+    );
+}
     /* ========================================
        Search
     ======================================== */

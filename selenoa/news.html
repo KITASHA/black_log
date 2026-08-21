@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,25 +10,49 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="selenoa-body">
+<body class="selenoa-body" id="top">
 
     <header class="site-header">
         <div class="header-inner">
 
             <a class="brand" href="index.html">
-                <span class="brand-mark">S</span>
+
+                <span class="brand-icon">
+                    <img
+                        src="../assets/img/icon/selenoa_icon.png"
+                        alt=""
+                    >
+                </span>
 
                 <span class="brand-text">
                     <strong>SELENOA</strong>
                     <small>TECHNOLOGIES</small>
                 </span>
+
             </a>
 
-            <nav class="global-nav" aria-label="メインナビゲーション">
-                <a href="index.html">ホーム</a>
-                <a href="research.html">研究開発</a>
-                <a href="roster.html">研究体制</a>
-                <a class="active" href="news.html">ニュース</a>
+            <nav
+                class="global-nav"
+                aria-label="メインナビゲーション"
+            >
+                <a href="index.html">
+                    ホーム
+                </a>
+
+                <a href="research.html">
+                    研究開発
+                </a>
+
+                <a href="roster.html">
+                    研究体制
+                </a>
+
+                <a
+                    class="active"
+                    href="news.html"
+                >
+                    ニュース
+                </a>
             </nav>
 
         </div>
@@ -64,6 +89,7 @@
                 >
 
                     <div class="article-meta">
+
                         <time datetime="2025-03-31">
                             2025.03.31
                         </time>
@@ -71,6 +97,7 @@
                         <span>
                             研究開発
                         </span>
+
                     </div>
 
                     <h2>
@@ -113,13 +140,15 @@
 
                 </article>
 
-<!-- 
+
+                <!--
                 <article
                     class="news-article news-article-minor"
                     id="news-2026"
                 >
 
                     <div class="article-meta">
+
                         <time datetime="2026-04-03">
                             2026.04.03
                         </time>
@@ -127,6 +156,7 @@
                         <span>
                             お知らせ
                         </span>
+
                     </div>
 
                     <h2>
@@ -143,7 +173,8 @@
 
                     </div>
 
-                </article> -->
+                </article>
+                -->
 
             </div>
         </section>
@@ -153,7 +184,12 @@
 
     <div data-shared-footer></div>
 
-    <script src="../assets/js/components.js"></script>
+
+    <script
+        type="module"
+        src="../assets/js/main.js"
+    ></script>
 
 </body>
+
 </html>
