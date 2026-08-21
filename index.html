@@ -1,24 +1,61 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Search</title>
 
-<link href="assets/css/style.css" rel="stylesheet"/></head>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
 <body class="search-page" id="top">
-<main class="search-shell">
-<a class="search-logo" href="index.html">Search</a>
-<a href="now.html" style="display:block; margin:12px 0 24px; font-size:13px;">Now（SNS）を見る →</a>
-<form class="search-form" id="search-form">
-<input autocomplete="off" autofocus="" id="search-input" placeholder="キーワードを入力" type="search"/>
-<button type="submit">検索</button>
-</form>
-<section id="search-results"></section>
-</main>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/search.js"></script>
-<div data-shared-footer=""></div><script src="assets/js/components.js"></script></body>
+
+    <main class="search-shell">
+
+        <a class="search-logo" href="index.html">
+            Search
+        </a>
+
+        <form class="search-form" id="search-form">
+
+            <input
+                id="search-input"
+                type="search"
+                placeholder="キーワードを入力"
+                autocomplete="off"
+                autofocus
+            >
+
+            <button type="submit">
+                検索
+            </button>
+
+        </form>
+
+        <section id="search-results"></section>
+
+        <a
+            class="now-app-link"
+            href="now.html"
+            aria-label="Nowを開く"
+        >
+            <img
+                class="now-app-icon"
+                src="assets/img/photos/now_icon.png"
+                alt="Now"
+            >
+        </a>
+
+    </main>
+
+
+    <div data-shared-footer></div>
+
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/components.js"></script>
+
+</body>
 </html>
