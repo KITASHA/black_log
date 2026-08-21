@@ -83,7 +83,54 @@
     opacity: .85;
 }
 
+/* ========================================
+   Browser Navigation
+======================================== */
 
+.site-footer__browser-nav {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 14px 0 4px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.site-footer__browser-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    color: inherit;
+    background: transparent;
+
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+
+    opacity: .7;
+
+    transition:
+        opacity .15s ease,
+        transform .15s ease,
+        background-color .15s ease;
+}
+
+.site-footer__browser-link:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    background: rgba(128, 128, 128, .08);
+}
+
+.site-footer__browser-arrow {
+    font-size: 14px;
+    line-height: 1;
+}
 /* ========================================
    Light Pages
 ======================================== */

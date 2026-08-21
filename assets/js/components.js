@@ -6,9 +6,14 @@ export function initComponents() {
     }
 
     const inSelenoa = window.location.pathname.includes("/selenoa/");
+
     const path = inSelenoa
         ? "../components/footer.html"
         : "components/footer.html";
+
+    const searchPageHref = inSelenoa
+        ? "../index.html"
+        : "index.html";
 
     fetch(path)
         .then((response) => {
@@ -26,9 +31,20 @@ export function initComponents() {
             if (brand && inSelenoa) {
                 brand.textContent = "SELENOA TECHNOLOGIES";
             }
+
+            const browserLink = mount.querySelector(
+                ".site-footer__browser-link"
+            );
+
+            if (browserLink) {
+                browserLink.href = searchPageHref;
+            }
         })
         .catch((error) => {
-            console.error("Shared footer could not be loaded.", error);
+            console.error(
+                "Shared footer could not be loaded.",
+                error
+            );
 
             mount.innerHTML = `
                 <footer class="site-footer">
