@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +10,68 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="search-page" id="top">
+<body
+    id="top"
+    class="search-page"
+>
 
     <main class="search-shell">
 
-        <a class="search-logo" href="index.html">
+        <a
+            class="search-logo"
+            href="index.html"
+        >
             Search
         </a>
 
-        <form class="search-form" id="search-form">
+
+        <div class="app-links">
+
+            <a
+                class="app-link"
+                href="now.html"
+                aria-label="Nowを開く"
+            >
+                <img
+                    class="app-icon"
+                    src="assets/img/icon/now_icon.png"
+                    alt="Now"
+                >
+            </a>
+
+            <a
+                id="blacklog-app"
+                class="app-link hidden"
+                href="blacklog.html"
+                aria-label="BLACK.LOGを開く"
+            >
+                <img
+                    class="app-icon"
+                    src="assets/img/icon/blacklog_icon.png"
+                    alt="BLACK.LOG"
+                >
+            </a>
+
+            <a
+                id="selenoa-app"
+                class="app-link"
+                href="selenoa/index.html"
+                aria-label="SELENOAを開く"
+            >
+                <img
+                    class="app-icon"
+                    src="assets/img/icon/selenoa_icon.png"
+                    alt="SELENOA"
+                >
+            </a>
+
+        </div>
+
+
+        <form
+            id="search-form"
+            class="search-form"
+        >
 
             <input
                 id="search-input"
@@ -33,35 +87,8 @@
 
         </form>
 
+
         <section id="search-results"></section>
-        <div class="app-links">
-
-            <a
-                class="app-link"
-                href="now.html"
-                aria-label="Nowを開く"
-            >
-                <img
-                    class="app-icon"
-                    src="assets/img/photos/now_icon.png"
-                    alt="Now"
-                >
-            </a>
-
-            <a
-                id="blacklog-app"
-                class="app-link hidden"
-                href="blacklog.html"
-                aria-label="BLACK.LOGを開く"
-            >
-                <img
-                    class="app-icon"
-                    src="assets/img/photos/blacklog_icon.png"
-                    alt="BLACK.LOG"
-                >
-            </a>
-
-        </div>
 
     </main>
 
@@ -69,9 +96,11 @@
     <div data-shared-footer></div>
 
 
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/search.js"></script>
-    <script src="assets/js/components.js"></script>
+    <script
+        type="module"
+        src="assets/js/main.js"
+    ></script>
 
 </body>
+
 </html>

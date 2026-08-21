@@ -1,30 +1,90 @@
-body {
-    background: #f5f6f7;
-    color: #17191c;
+:root {
+    --now-bg: #f4f5fa;
+    --now-surface: #ffffff;
+    --now-surface-soft: #f6f7fc;
+
+    --now-text: #1b2035;
+    --now-muted: #74798c;
+
+    --now-line: #e3e5ef;
+
+    --now-navy: #111a4d;
+    --now-blue: #496ce8;
+    --now-violet: #6958df;
 }
+
+
+/* ========================================
+   Base
+======================================== */
+
+body {
+    margin: 0;
+    background: var(--now-bg);
+    color: var(--now-text);
+}
+
+
+/* ========================================
+   Layout
+======================================== */
 
 .now-layout {
     width: min(1160px, 100%);
+    min-height: 100vh;
     margin: 0 auto;
+
     display: grid;
     grid-template-columns: 210px minmax(0, 620px) 300px;
-    min-height: 100vh;
 }
+
+
+/* ========================================
+   Sidebar
+======================================== */
 
 .now-sidebar {
     padding: 24px 18px;
-    border-right: 1px solid #dedfe2;
-    background: #fff;
+
+    border-right: 1px solid var(--now-line);
+
+    background: var(--now-surface);
 }
 
+
+/* ---------- Logo ---------- */
+
 .now-logo {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
     margin-bottom: 26px;
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #111;
+
+    color: var(--now-text);
     text-decoration: none;
 }
+
+.now-logo-icon {
+    display: block;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.now-logo-text {
+    font-size: 1.3rem;
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+/* ---------- Navigation ---------- */
 
 .now-nav {
     display: grid;
@@ -32,168 +92,351 @@ body {
 }
 
 .now-nav a {
-    padding: 12px 14px;
-    border-radius: 999px;
-    color: #202226;
+    padding: 11px 14px;
+
+    border-radius: 10px;
+
+    color: var(--now-text);
     text-decoration: none;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
 }
 
 .now-nav a:hover {
-    background: #f0f1f3;
+    background: var(--now-surface-soft);
+    color: var(--now-blue);
 }
+
+
+/* ========================================
+   Feed
+======================================== */
 
 .feed {
     min-width: 0;
-    background: #fff;
-    border-right: 1px solid #dedfe2;
+
+    border-right: 1px solid var(--now-line);
+
+    background: var(--now-surface);
 }
+
+
+/* ---------- Feed Header ---------- */
 
 .feed-header {
     position: sticky;
     top: 0;
     z-index: 5;
+
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid #dedfe2;
+
+    border-bottom: 1px solid var(--now-line);
+
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
 }
 
 .feed-header span {
+    position: relative;
+
     padding: 15px 16px;
+
+    color: var(--now-muted);
+    font-weight: 600;
+}
+
+.feed-header span:first-child {
+    color: var(--now-text);
     font-weight: 700;
 }
+
+.feed-header span:first-child::after {
+    content: "";
+
+    position: absolute;
+    right: 25%;
+    bottom: 0;
+    left: 25%;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        var(--now-blue),
+        var(--now-violet)
+    );
+}
+
+
+/* ========================================
+   Posts
+======================================== */
 
 .post {
     display: grid;
-    grid-template-columns: 46px 1fr;
+    grid-template-columns: 46px minmax(0, 1fr);
     gap: 10px;
+
     padding: 16px;
-    border-bottom: 1px solid #e4e5e7;
+
+    border-bottom: 1px solid var(--now-line);
+
+    transition: background 0.15s ease;
 }
 
+.post:hover {
+    background: #fafaff;
+}
+
+.post > div:last-child {
+    min-width: 0;
+}
+
+
+/* ---------- Avatar ---------- */
+
 .avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
     display: grid;
     place-items: center;
-    color: #fff;
-    background: #35383e;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e0e3f0;
+    border-radius: 50%;
+
+    background: #eef0f8;
+
+    color: var(--now-navy);
+
     font-weight: 700;
 }
+
+
+/* ---------- Meta ---------- */
 
 .post-meta {
     display: flex;
     align-items: baseline;
-    gap: 6px;
     flex-wrap: wrap;
-    color: #70747b;
+    gap: 6px;
+
+    color: var(--now-muted);
+
     font-size: 0.92rem;
 }
 
 .post-name {
-    color: #17191c;
+    color: var(--now-text);
     font-weight: 700;
 }
 
+
+/* ---------- Body ---------- */
+
 .post-body {
     margin: 5px 0 9px;
+
     line-height: 1.6;
     white-space: pre-line;
+    overflow-wrap: anywhere;
 }
+
+
+/* ---------- Actions ---------- */
 
 .post-actions {
     display: flex;
     justify-content: space-between;
+    gap: 12px;
+
     max-width: 390px;
-    color: #8a8e95;
+
+    color: #8b90a0;
+
     font-size: 0.86rem;
 }
 
+
+/* ========================================
+   Thread
+======================================== */
+
 .thread {
     margin-top: 12px;
-    border: 1px solid #d8dade;
-    border-radius: 14px;
+
     overflow: hidden;
+
+    border: 1px solid var(--now-line);
+    border-radius: 12px;
 }
 
 .thread-item {
     padding: 12px 14px;
-    border-top: 1px solid #e3e4e6;
-    background: #fafafa;
+
+    border-top: 1px solid var(--now-line);
+
+    background: #fafaff;
+
     line-height: 1.55;
+    overflow-wrap: anywhere;
 }
 
 .thread-item:first-child {
     border-top: 0;
 }
 
+.thread-item strong {
+    color: var(--now-blue);
+}
+
+
+/* ========================================
+   BLACK.LOG
+======================================== */
+
 .blacklog-card {
     margin-top: 12px;
     padding: 14px;
+
     border-radius: 12px;
+
     background: #090b0f;
     color: #edf0f4;
 }
 
 .blacklog-card strong {
     display: block;
+
     font-family: Consolas, monospace;
     letter-spacing: 0.08em;
 }
 
+.blacklog-card span {
+    color: #a8adb7;
+}
+
 .blacklog-card a {
     display: inline-block;
+
     margin-top: 12px;
     padding: 9px 12px;
+
     border: 1px solid #39414c;
     border-radius: 7px;
-    color: #fff;
+
+    color: #ffffff;
     text-decoration: none;
 }
 
+.blacklog-card a:hover {
+    background: #151922;
+}
+
+
+/* ========================================
+   Right Column
+======================================== */
+
 .now-right {
     padding: 18px;
-    background: #fff;
+
+    background: var(--now-surface);
 }
+
+
+/* ---------- Search ---------- */
 
 .search-box {
     display: flex;
     gap: 8px;
+
     margin-bottom: 18px;
 }
 
 .search-box input {
     min-width: 0;
     flex: 1;
+
     padding: 11px 13px;
-    border: 1px solid #d7d9dd;
+
+    border: 1px solid var(--now-line);
     border-radius: 999px;
-    background: #f2f3f5;
+
+    outline: none;
+
+    background: var(--now-surface-soft);
+    color: var(--now-text);
+}
+
+.search-box input::placeholder {
+    color: #969baa;
 }
 
 .search-box button {
+    padding: 0 14px;
+
     border: 0;
     border-radius: 999px;
-    padding: 0 14px;
-    background: #111;
-    color: #fff;
+
+    background: var(--now-navy);
+    color: #ffffff;
 }
+
+
+/* Disabled search */
+
+.search-box input:disabled,
+.search-box button:disabled {
+    cursor: default;
+    opacity: 0.65;
+}
+
+
+/* ---------- Side Card ---------- */
 
 .side-card {
     padding: 16px;
-    border: 1px solid #e1e2e4;
+
+    border: 1px solid var(--now-line);
     border-radius: 14px;
-    background: #f8f8f9;
+
+    background: var(--now-surface-soft);
 }
 
 .side-card h2 {
     margin: 0 0 12px;
+
+    color: var(--now-text);
+
     font-size: 1rem;
 }
 
+.side-card p {
+    margin: 0;
+}
+
+
+/* ========================================
+   Common
+======================================== */
+
+.muted {
+    color: var(--now-muted);
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
 @media (max-width: 900px) {
+
     .now-layout {
         grid-template-columns: 72px minmax(0, 1fr);
     }
@@ -203,12 +446,27 @@ body {
     }
 
     .now-logo {
-        font-size: 1rem;
+        justify-content: center;
+
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .now-logo-icon {
+        width: 27px;
+        height: 27px;
+
+        border-radius: 7px;
+    }
+
+    .now-logo-text {
+        display: none;
     }
 
     .now-nav a {
-        padding: 10px 8px;
-        font-size: 0.78rem;
+        padding: 10px 5px;
+
+        font-size: 0.76rem;
         text-align: center;
     }
 
@@ -217,7 +475,43 @@ body {
     }
 }
 
+
+/* ========================================
+   Small Tablet
+======================================== */
+
+@media (max-width: 760px) {
+
+    .now-layout {
+        grid-template-columns: 64px minmax(0, 1fr);
+    }
+
+    .now-sidebar {
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+    .now-logo-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .post {
+        padding: 14px 12px;
+    }
+
+    .post-actions {
+        max-width: 100%;
+    }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
 @media (max-width: 560px) {
+
     .now-layout {
         display: block;
     }
@@ -229,26 +523,53 @@ body {
     .feed {
         border-right: 0;
     }
-}
 
-/* Responsive hardening */
-.post > div:last-child { min-width: 0; }
-.thread-item, .post-body { overflow-wrap: anywhere; }
+    .feed-header span {
+        padding: 13px 10px;
+    }
 
-@media (max-width: 760px) {
-    .now-layout { grid-template-columns: 64px minmax(0, 1fr); }
-    .post { padding: 14px 12px; }
-    .post-actions { max-width: 100%; gap: 12px; }
-}
+    .post {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 9px;
 
-@media (max-width: 560px) {
-    .feed-header span { padding: 13px 10px; }
-    .post { grid-template-columns: 38px minmax(0, 1fr); gap: 9px; }
-    .avatar { width: 36px; height: 36px; font-size: .9rem; }
-    .post-meta { gap: 4px; font-size: .82rem; }
-    .post-body { font-size: .95rem; line-height: 1.55; }
-    .post-actions { font-size: .78rem; }
-    .thread { border-radius: 10px; }
-    .thread-item { padding: 10px 11px; font-size: .9rem; }
-    .blacklog-card { padding: 12px; }
+        padding: 13px 11px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+
+        font-size: 0.9rem;
+    }
+
+    .post-meta {
+        gap: 4px;
+
+        font-size: 0.82rem;
+    }
+
+    .post-body {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .post-actions {
+        gap: 8px;
+
+        font-size: 0.78rem;
+    }
+
+    .thread {
+        border-radius: 10px;
+    }
+
+    .thread-item {
+        padding: 10px 11px;
+
+        font-size: 0.9rem;
+    }
+
+    .blacklog-card {
+        padding: 12px;
+    }
 }

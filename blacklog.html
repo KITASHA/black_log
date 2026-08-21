@@ -1,43 +1,114 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>BLACK.LOG</title>
 
-<link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/blacklog.css" rel="stylesheet"/>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BLACK.LOG</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blacklog.css">
 </head>
-<body class="blacklog-body" id="top">
-<main class="blacklog-wrap">
-<header class="blacklog-head">
-<div>
-<h1 class="blacklog-title">BLACK.LOG</h1>
-<p class="muted">external viewer / read-only session</p>
-</div>
-<div class="blacklog-status">
-                SESSION 01<br/>
-                UNKNOWN ORIGIN<br/>
+
+<body
+    id="top"
+    class="blacklog-body"
+>
+
+    <main class="blacklog-wrap">
+
+        <header class="blacklog-head">
+
+            <div>
+                <h1 class="blacklog-title">
+                    BLACK.LOG
+                </h1>
+
+                <p class="muted">
+                    external viewer / read-only session
+                </p>
+            </div>
+
+            <div class="blacklog-status">
+                SESSION 01<br>
+                UNKNOWN ORIGIN<br>
                 READ ACCESS ONLY
             </div>
-</header>
-<section aria-live="polite" class="log-panel" id="blacklog-lines"></section>
-<section class="auth-box hidden" id="auth-panel">
-<span class="auth-label">AURORA AUTHENTICATION</span>
-<p class="auth-hint">AUTH KEY : HER NAME</p>
-<form class="auth-form" id="blacklog-auth">
-<input aria-label="半角大文字アルファベット8文字" autocapitalize="characters" autocomplete="off" id="blacklog-password" inputmode="text" maxlength="8" placeholder="________" type="text"/>
-<button type="submit">AUTH</button>
-</form>
-<p class="muted">認証キー：彼女の名前は？</p>
-<p aria-live="polite" class="auth-message" id="blacklog-message"></p>
-</section>
-<nav class="log-actions">
-<a href="search.html">[ 外部検索を開く ]</a>
-<a href="index.html">[ SNSへ戻る ]</a>
-</nav>
-</main>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/blacklog.js"></script>
-<div data-shared-footer=""></div><script src="assets/js/components.js"></script></body>
+
+        </header>
+
+
+        <section
+            id="blacklog-lines"
+            class="log-panel"
+            aria-live="polite"
+        ></section>
+
+
+        <section
+            id="auth-panel"
+            class="auth-box hidden"
+        >
+
+            <span class="auth-label">
+                AURORA AUTHENTICATION
+            </span>
+
+            <p class="auth-hint">
+                AUTH KEY : HER NAME
+            </p>
+
+            <form
+                id="blacklog-auth"
+                class="auth-form"
+            >
+                <input
+                    id="blacklog-password"
+                    type="text"
+                    inputmode="text"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    maxlength="8"
+                    placeholder="________"
+                    aria-label="半角大文字アルファベット8文字"
+                >
+
+                <button type="submit">
+                    AUTH
+                </button>
+            </form>
+
+            <p class="muted">
+                認証キー：彼女の名前は？
+            </p>
+
+            <p
+                id="blacklog-message"
+                class="auth-message"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+
+        <nav class="log-actions">
+            <a href="index.html">
+                [ ブラウザへ戻る ]
+            </a>
+        </nav>
+
+    </main>
+
+
+    <div data-shared-footer></div>
+
+
+    <script
+        type="module"
+        src="assets/js/main.js"
+    ></script>
+
+</body>
+
 </html>

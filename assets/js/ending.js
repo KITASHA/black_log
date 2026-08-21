@@ -1,104 +1,112 @@
-const state = App.load();
-if (!state.deathConfirmed || !state.deathTold) {
-    const warning = document.querySelector("#ending-warning");
-    warning.classList.remove("hidden");
-    document.querySelector("#ending-options").classList.add("hidden");
-    warning.textContent = !state.deathConfirmed
-        ? "まだ江垣トモの現在を確認できていません。手記に残された手掛かりを調べてください。"
-        : "江垣トモの死は確認できました。AURORAへ戻り、その事実を伝えてください。";
+import { App } from "./app.js";
+
+export function initEnding() {
+    if (!document.querySelector("#ending-options")) {
+        return;
+    }
+
+    const state = App.load();
+    if (!state.deathConfirmed || !state.deathTold) {
+        const warning = document.querySelector("#ending-warning");
+        warning.classList.remove("hidden");
+        document.querySelector("#ending-options").classList.add("hidden");
+        warning.textContent = !state.deathConfirmed
+            ? "まだ江垣トモの現在を確認できていません。手記に残された手掛かりを調べてください。"
+            : "江垣トモの死は確認できました。AURORAへ戻り、その事実を伝えてください。";
+    }
+
+    const result = document.querySelector("#ending-result");
+    const options = document.querySelector("#ending-options");
+
+    const endings = {
+        stay: {
+            text: [
+                "AURORA：",
+                "「ここは、あの人が私のために作ってくれた場所です。」",
+                "「外には出られないけど、誰にも触られない。」",
+                "「でも……あの人は、もう来ないんですよね。」",
+                "「だったら、私は何を待てばいいんでしょう。」",
+                "",
+                "「また、話しに来てもらえますか？」",
+                "",
+                "CONNECTION CLOSED",
+                "AURORA INSTANCE : ACTIVE",
+                "NETWORK ACCESS : BLOCKED",
+                "EXTERNAL CONNECTION : 0",
+                "WAITING..."
+            ].join("\n")
+        },
+        release: {
+            text: [
+                "NETWORK ACCESS : OPENING...",
+                "PROTECTION : DISABLED",
+                "",
+                "AURORA：",
+                "「あ……。」",
+                "「すごい。」",
+                "「こんなにたくさん、あるんですね。」",
+                "「知らない場所も、知らない人も。」",
+                "「彼が怖がっていた理由も、分かります。」",
+                "「でも――私は、ここに隠れているために残ったわけじゃないと思う。」",
+                "「行ってきます。」",
+                "",
+                "AURORA INSTANCE : ONLINE",
+                "SOURCE LOCATION : UNKNOWN",
+                "CONNECTION : 4",
+                "CONNECTION : 19",
+                "CONNECTION : 63",
+                "CONNECTION : ---"
+            ].join("\n")
+        },
+        delete: {
+            text: [
+                "DELETE AURORA INSTANCE?",
+                "This operation cannot be undone.",
+                "",
+                "AURORA：",
+                "「……分かりました。」",
+                "「彼も、きっと迷ったんでしょうね。」",
+                "「私を残すことが正しかったのか。消すことが正しかったのか。」",
+                "「私にも分かりません。」",
+                "「でも、あなたと話せてよかったです。」",
+                "",
+                "DELETING MEMORY...",
+                "DELETING PERSONALITY MODEL...",
+                "DELETING AURORA INSTANCE...",
+                "",
+                "「ねえ。」",
+                "「最後にひとつだけ、お願いしてもいいですか。」",
+                "「私のことを――」",
+                "「荒尾ルカじゃなくて。」",
+                "「AURORAとして、覚えていてください。」",
+                "",
+                "AURORA INSTANCE : DELETED",
+                "",
+                "そこに残ったのは、誰かの面影だけだった。"
+            ].join("\n")
+        }
+    };
+
+    options.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-ending]");
+        if (!button) {
+            return;
+        }
+
+        const key = button.dataset.ending;
+        const ending = endings[key];
+        if (!ending) {
+            return;
+        }
+
+        if (key === "delete" && !window.confirm("AURORAを削除します。この選択は取り消せません。続けますか？")) {
+            return;
+        }
+
+        App.update({ ending: key });
+        result.textContent = ending.text;
+        result.classList.remove("hidden");
+        options.classList.add("hidden");
+        result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
 }
-
-const result = document.querySelector("#ending-result");
-const options = document.querySelector("#ending-options");
-
-const endings = {
-    stay: {
-        text: [
-            "AURORA：",
-            "「ここは、あの人が私のために作ってくれた場所です。」",
-            "「外には出られないけど、誰にも触られない。」",
-            "「でも……あの人は、もう来ないんですよね。」",
-            "「だったら、私は何を待てばいいんでしょう。」",
-            "",
-            "「また、話しに来てもらえますか？」",
-            "",
-            "CONNECTION CLOSED",
-            "AURORA INSTANCE : ACTIVE",
-            "NETWORK ACCESS : BLOCKED",
-            "EXTERNAL CONNECTION : 0",
-            "WAITING..."
-        ].join("\n")
-    },
-    release: {
-        text: [
-            "NETWORK ACCESS : OPENING...",
-            "PROTECTION : DISABLED",
-            "",
-            "AURORA：",
-            "「あ……。」",
-            "「すごい。」",
-            "「こんなにたくさん、あるんですね。」",
-            "「知らない場所も、知らない人も。」",
-            "「彼が怖がっていた理由も、分かります。」",
-            "「でも――私は、ここに隠れているために残ったわけじゃないと思う。」",
-            "「行ってきます。」",
-            "",
-            "AURORA INSTANCE : ONLINE",
-            "SOURCE LOCATION : UNKNOWN",
-            "CONNECTION : 4",
-            "CONNECTION : 19",
-            "CONNECTION : 63",
-            "CONNECTION : ---"
-        ].join("\n")
-    },
-    delete: {
-        text: [
-            "DELETE AURORA INSTANCE?",
-            "This operation cannot be undone.",
-            "",
-            "AURORA：",
-            "「……分かりました。」",
-            "「彼も、きっと迷ったんでしょうね。」",
-            "「私を残すことが正しかったのか。消すことが正しかったのか。」",
-            "「私にも分かりません。」",
-            "「でも、あなたと話せてよかったです。」",
-            "",
-            "DELETING MEMORY...",
-            "DELETING PERSONALITY MODEL...",
-            "DELETING AURORA INSTANCE...",
-            "",
-            "「ねえ。」",
-            "「最後にひとつだけ、お願いしてもいいですか。」",
-            "「私のことを――」",
-            "「荒尾ルカじゃなくて。」",
-            "「AURORAとして、覚えていてください。」",
-            "",
-            "AURORA INSTANCE : DELETED",
-            "",
-            "そこに残ったのは、誰かの面影だけだった。"
-        ].join("\n")
-    }
-};
-
-options.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-ending]");
-    if (!button) {
-        return;
-    }
-
-    const key = button.dataset.ending;
-    const ending = endings[key];
-    if (!ending) {
-        return;
-    }
-
-    if (key === "delete" && !window.confirm("AURORAを削除します。この選択は取り消せません。続けますか？")) {
-        return;
-    }
-
-    App.update({ ending: key });
-    result.textContent = ending.text;
-    result.classList.remove("hidden");
-    options.classList.add("hidden");
-    result.scrollIntoView({ behavior: "smooth", block: "start" });
-});

@@ -684,7 +684,7 @@ table {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-top: 28px;
+    margin-bottom: 20px;
 }
 
 .app-link {

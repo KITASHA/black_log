@@ -1,43 +1,124 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>EGAKI_NOTE / LOCKED</title>
 
-<link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/blacklog.css" rel="stylesheet"/>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EGAKI_NOTE / LOCKED</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blacklog.css">
 </head>
-<body class="blacklog-body" id="top">
-<main class="blacklog-wrap">
-<header class="blacklog-head">
-<div>
-<h1 class="blacklog-title">EGAKI_NOTE</h1>
-<p class="muted">protected personal record</p>
-</div>
-<div class="blacklog-status">ENCRYPTED<br/>OWNER : EGAKI TOMO</div>
-</header>
-<section class="log-panel">
-<p class="log-line log-line--strong">PROTECTED FILE</p>
-<p class="log-line">この手記には別のパスワードが設定されています。</p>
-<p class="log-line">MESSAGE FROM OWNER:</p>
-<p class="log-line log-line--warn">「AURORAと同じやり方で、今度は私自身から。」</p>
-<p class="log-line">必要な情報が足りなければ、AURORAに聞いてみてください。</p>
-</section>
-<section class="auth-box">
-<span class="auth-label">NOTE PASSWORD</span>
-<form class="auth-form" id="note-auth">
-<input autocapitalize="characters" autocomplete="off" id="note-password" maxlength="7" placeholder="_______" type="text"/>
-<button type="submit">DECRYPT</button>
-</form>
-<p aria-live="polite" class="auth-message" id="note-message"></p>
-</section>
-<nav class="log-actions">
-<a href="aurora.html">[ AURORAへ戻る ]</a>
-<a href="interview.html">[ 2020年インタビューを確認 ]</a>
-</nav>
-</main>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/note-lock.js"></script>
-<div data-shared-footer=""></div><script src="assets/js/components.js"></script></body>
+
+<body
+    id="top"
+    class="blacklog-body"
+>
+
+    <main class="blacklog-wrap">
+
+        <header class="blacklog-head">
+
+            <div>
+                <h1 class="blacklog-title">
+                    EGAKI_NOTE
+                </h1>
+
+                <p class="muted">
+                    protected personal record
+                </p>
+            </div>
+
+            <div class="blacklog-status">
+                ENCRYPTED<br>
+                OWNER : EGAKI TOMO
+            </div>
+
+        </header>
+
+
+        <section class="log-panel">
+
+            <p class="log-line log-line--strong">
+                PROTECTED FILE
+            </p>
+
+            <p class="log-line">
+                この手記には別のパスワードが設定されています。
+            </p>
+
+            <p class="log-line">
+                MESSAGE FROM OWNER:
+            </p>
+
+            <p class="log-line log-line--warn">
+                「AURORAと同じやり方で、今度は私自身から。」
+            </p>
+
+            <p class="log-line">
+                必要な情報が足りなければ、AURORAに聞いてみてください。
+            </p>
+
+        </section>
+
+
+        <section class="auth-box">
+
+            <span class="auth-label">
+                NOTE PASSWORD
+            </span>
+
+            <form
+                id="note-auth"
+                class="auth-form"
+            >
+                <input
+                    id="note-password"
+                    type="text"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    maxlength="7"
+                    placeholder="_______"
+                >
+
+                <button type="submit">
+                    DECRYPT
+                </button>
+            </form>
+
+            <p
+                id="note-message"
+                class="auth-message"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+
+        <nav class="log-actions">
+
+            <a href="aurora.html">
+                [ AURORAへ戻る ]
+            </a>
+
+            <a href="interview.html">
+                [ 2020年インタビューを確認 ]
+            </a>
+
+        </nav>
+
+    </main>
+
+
+    <div data-shared-footer></div>
+
+
+    <script
+        type="module"
+        src="assets/js/main.js"
+    ></script>
+
+</body>
+
 </html>

@@ -84,9 +84,16 @@
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    background: var(--sl-text);
+
+    background: linear-gradient(
+        135deg,
+        #5475e8,
+        #7896f5
+    );
+
     color: #fff;
     font-weight: 800;
+    box-shadow: 0 3px 10px rgba(49, 87, 213, .18);
 }
 
 .brand-text {

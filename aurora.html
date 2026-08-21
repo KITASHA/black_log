@@ -1,33 +1,67 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>AURORA</title>
 
-<link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/aurora.css" rel="stylesheet"/>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AURORA</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/aurora.css">
 </head>
-<body class="aurora-body" id="top">
-<main class="aurora-shell">
-<section class="aurora-system system-text">
-            AURORA INSTANCE : ACTIVE<br/>
-            NETWORK ACCESS : BLOCKED<br/>
-            EXTERNAL CONNECTION : 1<br/>
+
+<body
+    id="top"
+    class="aurora-body"
+>
+
+    <main class="aurora-shell">
+
+        <section class="aurora-system system-text">
+            AURORA INSTANCE : ACTIVE<br>
+            NETWORK ACCESS : BLOCKED<br>
+            EXTERNAL CONNECTION : 1<br>
             SESSION TYPE : PRIVATE
         </section>
-<section aria-live="polite" class="chat-log" id="aurora-output"></section>
-<form class="chat-form" id="aurora-form">
-<input autocomplete="off" id="aurora-input" placeholder="AURORAにメッセージを入力" type="text"/>
-<button type="submit">SEND</button>
-</form>
-<nav class="log-actions">
-<a href="search.html">[ 外部検索 ]</a>
-<a href="blacklog.html">[ BLACK.LOG ]</a>
-<a href="ending.html">[ 最終選択 ]</a>
-</nav>
-</main>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/aurora.js"></script>
-<div data-shared-footer=""></div><script src="assets/js/components.js"></script></body>
+
+        <section
+            id="aurora-output"
+            class="chat-log"
+            aria-live="polite"
+        ></section>
+
+        <form
+            id="aurora-form"
+            class="chat-form"
+        >
+            <input
+                id="aurora-input"
+                type="text"
+                placeholder="AURORAにメッセージを入力"
+                autocomplete="off"
+            >
+
+            <button type="submit">
+                SEND
+            </button>
+        </form>
+
+        <nav class="log-actions">
+            <a href="index.html">[ 外部検索 ]</a>
+            <a href="blacklog.html">[ BLACK.LOG ]</a>
+            <a href="ending.html">[ 最終選択 ]</a>
+        </nav>
+
+    </main>
+
+    <div data-shared-footer></div>
+
+    <script
+        type="module"
+        src="assets/js/main.js"
+    ></script>
+
+</body>
+
 </html>

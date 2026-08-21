@@ -1,4 +1,4 @@
-const App = (() => {
+export const App = (() => {
     const STORAGE_KEY = "blackLogStateV2";
 
     const defaultState = {
