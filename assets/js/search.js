@@ -60,6 +60,15 @@ export function initSearch() {
         blacklogApp?.classList.remove("hidden");
     }
 
+    /* ========================================
+       SELENOA
+    ======================================== */
+
+    const selenoaApp = document.querySelector("#selenoa-app");
+
+    if (selenoaApp && state.selenoaUnlocked) {
+        selenoaApp.classList.remove("hidden");
+    }
 
     /* ========================================
        Search

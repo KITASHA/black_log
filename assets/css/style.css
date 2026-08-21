@@ -4,6 +4,11 @@
 ======================================== */
 
 @import url("./base.css");
+@import url("./layout.css");
+@import url("./web.css");
+@import url("./search.css");
+@import url("./footer.css");
+
 @import url("./now.css");
 @import url("./blacklog.css");
 @import url("./aurora.css");

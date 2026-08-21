@@ -1,0 +1,146 @@
+/* ========================================
+   Shared Footer
+======================================== */
+
+.search-page [data-shared-footer] {
+    margin-top: auto;
+}
+
+.site-footer {
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid rgba(128, 128, 128, .22);
+}
+
+.site-footer__inner {
+    width: min(1120px, calc(100% - 32px));
+    min-height: 46px;
+    margin: 0 auto;
+    padding: 12px 0 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-footer__notice {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+    white-space: pre-line;
+
+    opacity: .68;
+}
+
+.site-footer__brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    opacity: .65;
+}
+
+/* ========================================
+   Footer Actions
+======================================== */
+
+.site-footer__top,
+.site-footer__reset {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 0;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+
+    text-decoration: none;
+
+    opacity: .6;
+}
+
+.site-footer__reset {
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+.site-footer__top:hover,
+.site-footer__reset:hover {
+    background: transparent;
+    color: inherit;
+
+    text-decoration: underline;
+
+    opacity: .85;
+}
+
+
+/* ========================================
+   Light Pages
+======================================== */
+
+.web-body .site-footer,
+.search-page .site-footer {
+    border-color: #dfe3e8;
+    background: #fff;
+    color: #65707b;
+}
+
+
+/* ========================================
+   Dark Pages
+======================================== */
+
+.blacklog-body .site-footer,
+.aurora-body .site-footer,
+.ending-body .site-footer {
+    border-color: #20262e;
+    background: #05070a;
+    color: #7d8792;
+
+    font-family:
+        Consolas,
+        "SFMono-Regular",
+        monospace;
+}
+
+/* ========================================
+   Progress Controls
+======================================== */
+
+.progress-controls {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 0 0 10px 16px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+
+    .site-footer__inner {
+        width: min(100% - 24px, 1120px);
+
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .site-footer__top {
+        display: none;
+    }
+
+}

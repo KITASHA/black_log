@@ -12,6 +12,8 @@ import { initEnding } from "./ending.js";
 import { initSociety } from "./society.js";
 import { initInterview } from "./interview.js";
 import { initNote } from "./note.js";
+import { initGameControls } from "./controls.js";
+import {initSelenoa} from "./selenoa.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     initComponents();
@@ -24,4 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initSociety();
     initInterview();
     initNote();
+    initGameControls();
+    initSelenoa();
 });

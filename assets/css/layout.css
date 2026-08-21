@@ -1,57 +1,6 @@
-:root {
-    color-scheme: dark;
-    font-family: "Segoe UI", "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    --bg: #080a0e;
-    --panel: #11151b;
-    --panel-soft: #171c24;
-    --line: #29303a;
-    --text: #eef2f6;
-    --muted: #8e98a6;
-    --accent: #e7ebef;
-    --danger: #d46b6b;
-    --ok: #8fd0a8;
-    --link: #9ecaff;
-    --terminal: #b8ffc5;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    min-height: 100%;
-    background: var(--bg);
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    color: var(--text);
-    background: var(--bg);
-}
-
-button,
-input,
-textarea {
-    font: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-a {
-    color: var(--link);
-}
-
-button {
-    color: inherit;
-}
-
-.hidden {
-    display: none !important;
-}
+/* ========================================
+   Common Layout
+======================================== */
 
 .shell {
     width: min(1040px, calc(100% - 32px));
@@ -63,7 +12,7 @@ button {
     top: 0;
     z-index: 20;
     border-bottom: 1px solid var(--line);
-    background: rgba(8, 10, 14, 0.92);
+    background: rgba(8, 10, 14, .92);
     backdrop-filter: blur(16px);
 }
 
@@ -79,7 +28,7 @@ button {
     color: var(--text);
     text-decoration: none;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: .08em;
 }
 
 .page-nav {
@@ -93,17 +42,17 @@ button {
 .ghost-button,
 .primary-button,
 .danger-button {
+    padding: 9px 13px;
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 9px 13px;
     background: var(--panel-soft);
     text-decoration: none;
     cursor: pointer;
 }
 
 .primary-button {
-    background: #edf1f5;
     border-color: #edf1f5;
+    background: #edf1f5;
     color: #0a0c0f;
     font-weight: 700;
 }
@@ -113,14 +62,9 @@ button {
     background: #2b1717;
 }
 
-.muted {
-    color: var(--muted);
-}
-
 .section-title {
     margin: 0 0 18px;
     font-size: clamp(1.55rem, 4vw, 2.2rem);
-    letter-spacing: 0.01em;
 }
 
 .card {
@@ -130,7 +74,11 @@ button {
 }
 
 .system-text {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
 }
 
 .notice {
@@ -140,18 +88,6 @@ button {
     background: #0e1218;
     color: var(--muted);
     line-height: 1.7;
-}
-
-@media (max-width: 640px) {
-    .shell {
-        width: min(100% - 20px, 1040px);
-    }
-
-    .page-header__inner {
-        align-items: flex-start;
-        padding: 11px 0;
-        flex-direction: column;
-    }
 }
 
 .log-actions {
@@ -170,12 +106,14 @@ button {
     text-decoration: none;
 }
 
-.fiction-footer {
-    width: 100%;
-    padding: 16px 12px;
-    text-align: center;
-    font-size: 12px;
-    color: #888;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
-    box-sizing: border-box;
+@media (max-width: 768px) {
+    .shell {
+        width: min(100% - 20px, 1040px);
+    }
+
+    .page-header__inner {
+        padding: 11px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
