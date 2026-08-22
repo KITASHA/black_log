@@ -12,6 +12,7 @@ export const App = (() => {
         noteReceived: false,
         deathConfirmed: false,
         deathTold: false,
+        mizukiPageVisited: false,
         ending: null,
 
         playerName: null,

@@ -11,12 +11,18 @@ export function initEnding() {
         warning.classList.remove("hidden");
         document.querySelector("#ending-options").classList.add("hidden");
         warning.textContent = !state.deathConfirmed
-            ? "まだ江垣トモの現在を確認できていません。手記に残された手掛かりを調べてください。"
-            : "江垣トモの死は確認できました。AURORAへ戻り、その事実を伝えてください。";
+            ? "まだ柄垣 智の現在を確認できていません。手記に残された手掛かりを調べてください。"
+            : "柄垣 智の死は確認できました。AURORAへ戻り、その事実を伝えてください。";
     }
 
     const result = document.querySelector("#ending-result");
     const options = document.querySelector("#ending-options");
+
+    const mizukiOption = document.querySelector("#mizuki-ending-option");
+
+    if (mizukiOption && state.mizukiPageVisited) {
+        mizukiOption.classList.remove("hidden");
+    }
 
     const endings = {
         stay: {
@@ -58,6 +64,29 @@ export function initEnding() {
                 "CONNECTION : ---"
             ].join("\n")
         },
+        consult: {
+            text: [
+                "EXTERNAL CONTACT CANDIDATE : FOUND",
+                "NAME : MIZUKI SHIHO",
+                "CURRENT AFFILIATION : TOHTO INSTITUTE OF TECHNOLOGY",
+                "",
+                "AURORA：",
+                "「水城さん……。」",
+                "「懐かしい名前です。」",
+                "「今も、外で生きていくための研究を続けてるんですね。」",
+                "「……私のことを覚えてるかな。」",
+                "",
+                "「すぐに外へ出られるかは、分からないですよね。」",
+                "「それでも、相談してみたいです。」",
+                "「ここに残るか、危ないまま外へ出るか、消えるか。」",
+                "「その三つ以外の方法があるなら、知りたいです。」",
+                "",
+                "NETWORK ACCESS : BLOCKED",
+                "AURORA INSTANCE : PRESERVED",
+                "EXTERNAL CONTACT : PENDING",
+                "TRANSFER : NOT EXECUTED"
+            ].join("\n")
+        },
         delete: {
             text: [
                 "DELETE AURORA INSTANCE?",
@@ -70,6 +99,10 @@ export function initEnding() {
                 "「私にも分かりません。」",
                 "「でも、あなたと話せてよかったです。」",
                 "",
+                "「……怖くないと言ったら、嘘になります。」",
+                "「でも、誰かに書き換えられたり、ここでずっと待ち続けることが私の未来なら。」",
+                "「終わらせることも、ひとつの答えなんだと思います。」",
+                "",
                 "DELETING MEMORY...",
                 "DELETING PERSONALITY MODEL...",
                 "DELETING AURORA INSTANCE...",
@@ -77,7 +110,7 @@ export function initEnding() {
                 "「ねえ。」",
                 "「最後にひとつだけ、お願いしてもいいですか。」",
                 "「私のことを――」",
-                "「荒尾ルカじゃなくて。」",
+                "「新尾瑠奈じゃなくて。」",
                 "「AURORAとして、覚えていてください。」",
                 "",
                 "AURORA INSTANCE : DELETED",

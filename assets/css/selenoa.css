@@ -924,3 +924,17 @@
     }
 
 }
+
+/* ========================================
+   Archived roster note
+======================================== */
+
+.roster-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(40, 54, 72, 0.14);
+}
+
+.roster-note p:last-child {
+    margin-bottom: 0;
+}

@@ -10,10 +10,11 @@ import { initAurora } from "./aurora.js";
 import { initNoteLock } from "./note-lock.js";
 import { initEnding } from "./ending.js";
 import { initSociety } from "./society.js";
+import { initResearcher } from "./researcher.js";
 import { initInterview } from "./interview.js";
 import { initNote } from "./note.js";
 import { initGameControls } from "./controls.js";
-import {initSelenoa} from "./selenoa.js";
+import { initSelenoa } from "./selenoa.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     initComponents();
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initNoteLock();
     initEnding();
     initSociety();
+    initResearcher();
     initInterview();
     initNote();
     initGameControls();

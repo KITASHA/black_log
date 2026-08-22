@@ -7,7 +7,7 @@ export function initNoteLock() {
 
     const state = App.load();
     if (!state.auroraUnlocked || !state.noteReceived) {
-        window.location.replace("aurora.html");
+        window.location.replace("blacklog.html");
     }
 
     const form = document.querySelector("#note-auth");

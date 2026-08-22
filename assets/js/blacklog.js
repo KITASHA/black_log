@@ -374,7 +374,7 @@ export function initBlacklog() {
             // Authentication Failed
             // ----------------------------------------
 
-            if (value !== "ARAORUKA") {
+            if (value !== "ARAORUNA") {
 
                 message.textContent =
                     "AUTHENTICATION FAILED";

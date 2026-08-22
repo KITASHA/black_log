@@ -1,75 +1,88 @@
-# 実装メモ
+# BLACK.LOG 実装メモ
 
-## シナリオ進行
+## 現在の主要導線
 
-`index.html`
-→ `blacklog.html`
-→ `search.html`
-→ `company.html`
-→ `interview.html`
-→ `roster.html`
-→ `blacklog.html` で `ARAORUKA`
-→ `aurora.html`
-→ 約3回会話
-→ `note-lock.html`
-→ `aurora.html` で江垣トモの誕生日（5月6日）を確認
+SNS / 検索
+→ セレノア公開情報・インタビュー
+→ `blacklog.html` で `ARAORUNA`
+→ AURORA起動・会話
+→ 手記受領
 → `note-lock.html` で `OMOKAGE`
-→ `note.html`
-→ `search.html` で「東都認知情報研究会」
-→ `society.html`
-→ `aurora.html` で江垣の死を伝える
+→ 手記解読
+→ 東都認知情報研究会で柄垣 智の死亡を確認
+→ AURORAへ死亡を伝える
 → `ending.html`
 
-## localStorage
+追加探索：
+東都認知情報研究会または旧研究チーム名簿で水城 志帆を確認
+→ 検索で `mizuki.html` に到達
+→ `mizukiPageVisited=true`
+→ 最終選択に「水城 志帆に相談する」が追加
 
-キー: `blackLogStateV2`
+## State
 
-主な値:
-
+- `searched`: 検索済み語句
+- `viewed`: 閲覧済みページID
 - `auroraUnlocked`: AURORA起動認証を突破したか
+- `auroraBooted`: AURORAを起動済みか
+- `blacklogDiscovered`: BLACK.LOGを発見したか
+- `noteUnlocked`: 手記の暗号を解除したか
 - `auroraChats`: AURORAと会話した回数
-- `noteReceived`: 手記を受け取ったか
-- `noteUnlocked`: 手記の認証を突破したか
-- `deathConfirmed`: 研究会サイトで江垣の死を確認したか
-- `deathTold`: AURORAへ江垣の死を伝えたか
+- `noteReceived`: 手記リンクを受領したか
+- `deathConfirmed`: 研究会サイトで柄垣 智の死を確認したか
+- `deathTold`: AURORAへ柄垣 智の死を伝えたか
+- `mizukiPageVisited`: 水城 志帆の大学研究者ページへ到達したか
 - `ending`: 選択したエンディング
+- `playerName`: プレイヤーが確定した名前
+- `playerIsTomo`: プレイヤーを柄垣 智本人と認識しているか
+- `pendingPlayerName`: 名前確認中の候補
+- `pendingPlayerIsTomo`: 候補名が智判定か
+- `namePhase`: 名前入力のフェーズ
 
-## AURORA会話
+## 命名ロジック
 
-`assets/js/aurora.js` の `getResponse()` でキーワード判定しています。
-外部AI APIは使用していません。
+### 新尾 瑠奈 → AURORA
 
-主なカテゴリ:
+`ARAORUNA`
 
-- 江垣／トモ／彼／あの人
-- 誕生日／生年月日
-- 好き／恋人／婚約
-- 荒尾／ルカ／あなたは誰
-- ここ／秘匿領域／ネット
-- 待つ／戻る／会える
-- 手記／記録／ファイル
-- 亡くなった／死亡／逝去
+3月7日なので、3文字目 `A` と7文字目 `N` を除去。
 
-## 確定ロジック
+`ARORUA`
 
-### 荒尾ルカ → AURORA
+逆読みすると `AURORA`。
 
-`ARAORUKA`
+BLACK.LOGの起動認証パスワードは `ARAORUNA`。
 
-3番目 `A` と7番目 `K` を除去
-→ `ARORUA`
-→ 逆読み
-→ `AURORA`
-
-最初の入力パスワード自体は `ARAORUKA`。
-
-### 江垣トモ → OMOKAGE
+### 柄垣 智 → OMOKAGE
 
 `EGAKITOMO`
 
-5番目 `I` と6番目 `T` を除去
-→ `EGAKOMO`
-→ 逆読み
-→ `OMOKAGE`
+5月6日なので、5文字目 `I` と6文字目 `T` を除去。
+
+`EGAKOMO`
+
+逆読みすると `OMOKAGE`。
 
 手記パスワードは `OMOKAGE`。
+
+## AURORAの安全性問題
+
+公式なプロジェクト凍結理由は倫理的課題のまま変更しない。
+それとは別に、研究過程で以下の問題が認識されている。
+
+- 人格・記憶への外部干渉や改変をAURORA自身が防げない。
+- AURORAは苦痛・恐怖・孤独を表明できる一方、自分自身を停止する権限を持たない。
+- 外部から隔離すれば安全性は高まるが、AURORAから外部世界との関係を奪う。
+- 外部ネットワークへ解放すれば自由になる一方、コピー・改変・悪用の危険がある。
+
+柄垣 智は削除を「処分」だけではなく救済にもなり得る選択として検討したが、決断できず、AURORAを秘匿領域へ隔離・凍結した。
+
+## 水城 志帆
+
+AURORA PROJECTの元研究チームメンバー。
+現在は東都工科大学 情報科学研究科 教授。
+AURORAが秘匿領域に残されていることは知らない。
+
+現在は、再現人格が外部ネットワーク上で、人格への不正干渉から保護され、本人の意思決定を保ったまま活動するための実行環境を研究している。
+
+水城の大学ページへ到達したプレイヤーのみ、最終選択に「水城 志帆に相談する」が追加される。

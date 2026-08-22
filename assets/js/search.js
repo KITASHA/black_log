@@ -20,15 +20,31 @@ export function initSearch() {
         },
         {
             keywords: [
-                "江垣",
-                "江垣トモ",
+                "柄垣",
+                "柄垣智",
+                "柄垣 智",
+                "柄垣トモ",
+                "柄垣 トモ",
                 "トモ",
                 "EGAKITOMO"
             ],
-            title: "『人格を作る前に、安全な家が必要だった』― 江垣トモ氏インタビュー",
+            title: "『人格を作る前に、安全な家が必要だった』― 柄垣 智氏インタビュー",
             url: "interview.html",
             display: "tech-frontier.local / interview / 2020 / egaki-tomo",
-            description: "2020年公開。AURORA研究責任者・江垣トモ氏が語る人格再現技術の可能性と危険性。"
+            description: "2020年公開。AURORA研究責任者・柄垣 智氏が語る人格再現技術の可能性と危険性。"
+        },
+        {
+            keywords: [
+                "水城",
+                "水城志帆",
+                "水城 志帆",
+                "MIZUKI",
+                "MIZUKI SHIHO"
+            ],
+            title: "水城 志帆｜研究者紹介｜東都工科大学",
+            url: "mizuki.html",
+            display: "tohto-tech-univ.local / faculty / mizuki-shiho",
+            description: "元セレノアテクノロジー研究員。自律人格モデルが外部ネットワーク上で安全に活動するための実行環境を研究。"
         },
         {
             keywords: [
@@ -73,12 +89,12 @@ export function initSearch() {
 
     const interviewApp = document.querySelector("#interview-app");
 
-if (interviewApp) {
-    interviewApp.classList.toggle(
-        "hidden",
-        !state.interviewUnlocked
-    );
-}
+    if (interviewApp) {
+        interviewApp.classList.toggle(
+            "hidden",
+            !state.interviewUnlocked
+        );
+    }
     /* ========================================
        Search
     ======================================== */
