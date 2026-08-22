@@ -5,12 +5,20 @@ export const App = (() => {
         searched: [],
         viewed: [],
         auroraUnlocked: false,
+        auroraBooted: false,
+        blacklogDiscovered: false,
         noteUnlocked: false,
         auroraChats: 0,
         noteReceived: false,
         deathConfirmed: false,
         deathTold: false,
-        ending: null
+        ending: null,
+
+        playerName: null,
+        pendingPlayerName: null,
+        pendingPlayerIsTomo: false,
+        playerIsTomo: false,
+        namePhase: null
     };
 
     function load() {
@@ -35,29 +43,16 @@ export const App = (() => {
 
     function addUnique(key, value) {
         return update((state) => {
-            const values = Array.isArray(state[key]) ? state[key] : [];
-            if (!values.includes(value)) {
-                values.push(value);
-            }
+            const values = Array.isArray(state[key]) ? [...state[key]] : [];
+            if (!values.includes(value)) values.push(value);
             return { ...state, [key]: values };
         });
     }
 
-    function markViewed(id) {
-        addUnique("viewed", id);
-    }
-
-    function markSearch(query) {
-        addUnique("searched", query);
-    }
-
-    function param(name) {
-        return new URLSearchParams(window.location.search).get(name);
-    }
-
-    function reset() {
-        localStorage.removeItem(STORAGE_KEY);
-    }
+    function markViewed(id) { addUnique("viewed", id); }
+    function markSearch(query) { addUnique("searched", query); }
+    function param(name) { return new URLSearchParams(window.location.search).get(name); }
+    function reset() { localStorage.removeItem(STORAGE_KEY); }
 
     function normalize(value) {
         return String(value || "")
@@ -68,15 +63,5 @@ export const App = (() => {
             .toUpperCase();
     }
 
-    return {
-        load,
-        save,
-        update,
-        addUnique,
-        markViewed,
-        markSearch,
-        param,
-        reset,
-        normalize
-    };
+    return { load, save, update, addUnique, markViewed, markSearch, param, reset, normalize };
 })();

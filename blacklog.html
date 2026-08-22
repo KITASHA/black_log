@@ -18,76 +18,126 @@
 
     <main class="blacklog-wrap">
 
-        <header class="blacklog-head">
+        <!-- ========================================
+             BLACK.LOG
+        ========================================= -->
 
-            <div>
-                <h1 class="blacklog-title">
-                    BLACK.LOG
-                </h1>
+        <section id="blacklog-view">
+
+            <header class="blacklog-head">
+
+                <div>
+                    <h1 class="blacklog-title">
+                        BLACK.LOG
+                    </h1>
+
+                    <p class="muted">
+                        external viewer / read-only session
+                    </p>
+                </div>
+
+                <div class="blacklog-status">
+                    SESSION 01<br>
+                    UNKNOWN ORIGIN<br>
+                    READ ACCESS ONLY
+                </div>
+
+            </header>
+
+
+            <section
+                id="blacklog-lines"
+                class="log-panel"
+                aria-live="polite"
+            ></section>
+
+
+            <section
+                id="auth-panel"
+                class="auth-box hidden"
+            >
+
+                <span class="auth-label">
+                    AURORA AUTHENTICATION
+                </span>
+
+                <p class="auth-hint">
+                    AUTH KEY : HER NAME
+                </p>
+
+                <form
+                    id="blacklog-auth"
+                    class="auth-form"
+                >
+                    <input
+                        id="blacklog-password"
+                        type="text"
+                        inputmode="text"
+                        autocomplete="off"
+                        autocapitalize="characters"
+                        maxlength="8"
+                        placeholder="________"
+                        aria-label="半角大文字アルファベット8文字"
+                    >
+
+                    <button type="submit">
+                        AUTH
+                    </button>
+                </form>
 
                 <p class="muted">
-                    external viewer / read-only session
+                    認証キー：彼女の名前は？
                 </p>
-            </div>
 
-            <div class="blacklog-status">
-                SESSION 01<br>
-                UNKNOWN ORIGIN<br>
-                READ ACCESS ONLY
-            </div>
+                <p
+                    id="blacklog-message"
+                    class="auth-message"
+                    aria-live="polite"
+                ></p>
 
-        </header>
+            </section>
+
+        </section>
 
 
-        <section
-            id="blacklog-lines"
-            class="log-panel"
-            aria-live="polite"
-        ></section>
-
+        <!-- ========================================
+             AURORA
+        ========================================= -->
 
         <section
-            id="auth-panel"
-            class="auth-box hidden"
+            id="aurora-view"
+            class="hidden"
         >
 
-            <span class="auth-label">
-                AURORA AUTHENTICATION
-            </span>
-
-            <p class="auth-hint">
-                AUTH KEY : HER NAME
-            </p>
+            <section
+                id="aurora-output"
+                class="chat-log"
+                aria-live="polite"
+            ></section>
 
             <form
-                id="blacklog-auth"
-                class="auth-form"
+                id="aurora-form"
+                class="chat-form hidden"
             >
                 <input
-                    id="blacklog-password"
+                    id="aurora-input"
                     type="text"
-                    inputmode="text"
+                    placeholder="AURORAにメッセージを入力"
                     autocomplete="off"
-                    autocapitalize="characters"
-                    maxlength="8"
-                    placeholder="________"
-                    aria-label="半角大文字アルファベット8文字"
                 >
 
                 <button type="submit">
-                    AUTH
+                    SEND
                 </button>
             </form>
 
-            <p class="muted">
-                認証キー：彼女の名前は？
-            </p>
-
-            <p
-                id="blacklog-message"
-                class="auth-message"
-                aria-live="polite"
-            ></p>
+                <a
+                    id="ending-link"
+                    class="hidden"
+                    href="ending.html"
+                >
+                    [ 最終選択 ]
+                </a>
 
         </section>
 
