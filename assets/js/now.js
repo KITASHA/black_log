@@ -1,12 +1,20 @@
-import { App } from "./app.js";
-
 export function initNow() {
-    document.querySelectorAll("[data-reset]").forEach((button) => {
-        button.addEventListener("click", () => {
-            if (window.confirm("進行状況を初期化しますか？")) {
-                App.reset();
-                window.location.reload();
-            }
-        });
+
+    const tsukimiAdLink = document.querySelector("#tsukimi-ad-link");
+
+    if (!tsukimiAdLink) {
+        return;
+    }
+
+    tsukimiAdLink.addEventListener("click", (event) => {
+
+        const confirmed = window.confirm(
+            "このリンクは本編とは関係のない外部ページへ移動します。\n\nページを開きますか？"
+        );
+
+        if (!confirmed) {
+            event.preventDefault();
+        }
+
     });
 }

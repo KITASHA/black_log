@@ -1,3 +1,5 @@
+import { App } from "./app.js";
+
 export function initComponents() {
     const mount = document.querySelector("[data-shared-footer]");
 
@@ -26,11 +28,21 @@ export function initComponents() {
         .then((html) => {
             mount.innerHTML = html;
 
+
+            // ==============================
+            // Brand
+            // ==============================
+
             const brand = mount.querySelector(".site-footer__brand");
 
             if (brand && inSelenoa) {
                 brand.textContent = "SELENOA TECHNOLOGIES";
             }
+
+
+            // ==============================
+            // 検索画面へ戻る
+            // ==============================
 
             const browserLink = mount.querySelector(
                 ".site-footer__browser-link"
@@ -38,6 +50,29 @@ export function initComponents() {
 
             if (browserLink) {
                 browserLink.href = searchPageHref;
+            }
+
+
+            // ==============================
+            // 進捗リセット
+            // ==============================
+
+            const resetButton = mount.querySelector("[data-reset]");
+
+            if (resetButton) {
+                resetButton.addEventListener("click", () => {
+
+                    const confirmed = window.confirm(
+                        "進行状況を初期化しますか？"
+                    );
+
+                    if (!confirmed) {
+                        return;
+                    }
+
+                    App.reset();
+                    window.location.reload();
+                });
             }
         })
         .catch((error) => {
